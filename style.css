@@ -14,7 +14,7 @@ header {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #f3f3f3;
 }
@@ -96,4 +96,11 @@ footer {
 
 a {
   color: orangered;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid__container {
+    height: 300px;
+    width: 300px;
+  }
 }
