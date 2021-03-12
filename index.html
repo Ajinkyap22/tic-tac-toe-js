@@ -14,11 +14,24 @@
       <header>
         <h1 class="title">Let's Play Tic Tac Toe!</h1>
       </header>
-      <label>Player 1 - <span class="X">X</span></label>
-      <label
-        ><span class="player__label">Player 2 - </span
-        ><span class="O">O</span></label
-      >
+      <div class="menu">
+        <button class="mode multi active">Multiplayer</button>
+
+        <div class="labels">
+          <label>Player X - <span class="X">X</span></label>
+
+          <label>
+            <span class="player__label">Player O</span> -
+            <span class="O">O</span></label
+          >
+        </div>
+
+        <button class="mode single">Singleplayer</button>
+      </div>
+      <div class="game__over hidden">
+        <label class="result"></label>
+        <button class="btn replay">Play Again!</button>
+      </div>
       <section class="grid__container">
         <div class="grid grid1" data-index="0"></div>
         <div class="grid grid2" data-index="1"></div>
@@ -30,7 +43,9 @@
         <div class="grid grid8" data-index="7"></div>
         <div class="grid grid9" data-index="8"></div>
       </section>
+      <label class="turn">Player X's turn</label>
       <button class="btn reset">Restart</button>
+      <div class="overlay hidden"></div>
 
       <footer>
         <p>

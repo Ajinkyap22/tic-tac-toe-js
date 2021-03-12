@@ -5,8 +5,8 @@
   font-family: cursive;
 }
 
-header {
-  margin: 5px;
+body {
+  background-color: #f3f3f3;
 }
 
 .wrapper {
@@ -16,14 +16,35 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #f3f3f3;
+}
+
+header {
+  margin-bottom: 5px;
+  width: 100%;
+  background: #202020;
+  color: white;
+  padding: 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  font-size: 17px;
 }
 
 .grid__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  height: 400px;
+  height: 350px;
   width: 500px;
   margin: 20px;
 }
@@ -34,6 +55,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.grid:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.grid:active {
+  background: lightskyblue;
+  transition: all 0.3s;
 }
 
 .grid1,
@@ -68,9 +98,17 @@ header {
   color: red;
 }
 
-.btn {
-  font-size: 16px;
+.turn {
   padding: 5px;
+  margin: 5px;
+  border: 3px solid steelblue;
+  font-size: 17px;
+}
+
+.btn,
+.mode {
+  font-size: 16px;
+  padding: 10px;
   margin: 10px;
   border: none;
   border-radius: 5px;
@@ -79,19 +117,63 @@ header {
   letter-spacing: 2px;
 }
 
+.mode:hover {
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
 .btn:hover {
   background-color: steelblue;
   transform: scale(1.05);
   transition: all 0.3s;
 }
 
-.game-over {
-  opacity: 0.5;
+.game__over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 4rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.result {
+  padding: 10px;
+  margin: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  background: #cc9543;
+  border: 3px solid black;
 }
 
 footer {
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
 
 a {
@@ -102,5 +184,24 @@ a {
   .grid__container {
     height: 300px;
     width: 300px;
+  }
+
+  .mode {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
+  .game__over {
+    width: 50%;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 14px;
+    position: relative;
+    margin: 10px;
   }
 }
