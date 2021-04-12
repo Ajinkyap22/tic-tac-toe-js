@@ -1,4 +1,4 @@
-# Project Name
+# Tic Tac Toe
 > A responsive web application of the game Tic Tac Toe.
 
 ## Table of contents
